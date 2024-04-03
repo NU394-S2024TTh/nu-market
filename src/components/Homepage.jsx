@@ -1,29 +1,27 @@
 import { NavBar } from "./NavBar.jsx";
-import TestItem from "./testItem.js";
+import { testData } from "./testItem.js"; 
 export function HomePage(){
-    var testItem = TestItem();
+
     return(
         <>
         <NavBar/>
         <p className="text-4xl"> Welcome to NU Market! </p>
-        {gridItem({image:testItem.image, title:testItem.name, current_bid:testItem["current-bid"]})}
+        {grid()}
         </>
         
     
         
     );
 }
-function grid({image, title, current_bid}){
-    var testItems  =  TestItem()
-    var graphics = []
-    for(let i =  0; i < 12; i++){
-       graphics.push(<gridItem image={image} title={title} current_bid = {current_bid}/>)
-
-
-    }
-    return( <div className="flex flex-wrap justify-center"> {graphics} </div>);
+function grid(){
+   
+    const graphics = Object.values(testData).map((item, index) => (
+        <GridItem key={index} image={item.image} title={item.name} current_bid={item["current-bid"]} />
+    ));
+    return( <div className="grid grid-cols-2"> {graphics} </div>);
 }
-function gridItem({image, title, current_bid}){
+function GridItem({key, image, title, current_bid}){
+    console.log(current_bid)
 
     return(
         <a href="/item-test">
@@ -34,10 +32,10 @@ function gridItem({image, title, current_bid}){
       
             
             
-            <div className="grid grid-rows-2 ">
+            <div className="grid grid-cols-2 ">
             <h1 className="text-3xl text-center"> {title}</h1>
 
-                    <p> {current_bid} </p>
+            <h1> {current_bid} </h1>
 
 
 

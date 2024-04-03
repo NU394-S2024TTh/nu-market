@@ -1,7 +1,7 @@
 import { NavBar } from "./NavBar";
-import TestItem from "./testItem";
+import {testData} from "./testItem";
 export function IndvItemComponent(){
-    var item = TestItem();
+    var item = testData["1"]
     
   // json file with - 
   // key -> values as {picture: // link 
