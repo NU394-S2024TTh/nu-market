@@ -8,9 +8,9 @@ export default function App() {
     
     <BrowserRouter>
     <Routes>
-      <Route path="/" element={<HomePage />}/>
+      <Route path="/home" element={<HomePage />}/>
       <Route path="/items" element={<IndvItemGrid />}/>
-      <Route path="/items/:itemId" element={<IndvItemComponent />} />
+      <Route path="/item-test" element={<IndvItemComponent />} />
 
     </Routes>
     </BrowserRouter>
